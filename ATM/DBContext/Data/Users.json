@@ -1,0 +1,84 @@
+[
+  {
+    "Id": 1,
+    "Name": "admin",
+    "Surname": "admin",
+    "Email": "admin@admin.com",
+    "PhoneNumber": "000000000",
+    "CreatedDate": "2023-02-12T00:08:34.3657321+04:00",
+    "IsAdmin": true,
+    "PIN": "0000",
+    "CardsId": [
+      2
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "User1",
+    "Surname": "User1",
+    "Email": "user1@gmail.com",
+    "PhoneNumber": "10101010101",
+    "CreatedDate": "2023-02-12T00:10:43.1868079+04:00",
+    "IsAdmin": false,
+    "PIN": "5641",
+    "CardsId": [
+      3
+    ]
+  },
+  {
+    "Id": 3,
+    "Name": "User2",
+    "Surname": "User2",
+    "Email": "user2@gmail.com",
+    "PhoneNumber": "11111111111",
+    "CreatedDate": "2023-02-12T10:08:48.6254395+04:00",
+    "IsAdmin": false,
+    "PIN": "4205",
+    "CardsId": [
+      5
+    ]
+  },
+  {
+    "Id": 4,
+    "Name": "Rufat",
+    "Surname": "Ismayilov",
+    "Email": "yeblofonika@gmail.com",
+    "PhoneNumber": "94508821299",
+    "CreatedDate": "2023-02-16T11:28:27.8037862+04:00",
+    "IsAdmin": false,
+    "PIN": "6361",
+    "CardsId": [
+      4,
+      13
+    ]
+  },
+  {
+    "Id": 5,
+    "Name": "Yasin",
+    "Surname": "Mehdiyev",
+    "Email": "yasin.m@gmail.com",
+    "PhoneNumber": "994554433322",
+    "CreatedDate": "2023-02-17T11:14:39.2769416+04:00",
+    "IsAdmin": false,
+    "PIN": "8502",
+    "CardsId": [
+      11,
+      12
+    ]
+  },
+  {
+    "Id": 6,
+    "Name": "Rufat",
+    "Surname": "Isma",
+    "Email": "ruf@gmail.com",
+    "PhoneNumber": "994508821299",
+    "CreatedDate": "2023-02-20T12:24:06.8187483+04:00",
+    "IsAdmin": false,
+    "PIN": "9989",
+    "CardsId": [
+      9,
+      10,
+      14
+    ]
+  }
+]
