@@ -18,7 +18,7 @@ namespace ATM.Services
             string enteredValue = Console.ReadLine();
 
             string PINValue = "";
-            if (enteredValue.Length <= 4)
+            if (enteredValue.Length == 4)
             {
                 foreach (var item in enteredValue)
                 {
@@ -27,7 +27,6 @@ namespace ATM.Services
                         PINValue += item;
                     }
                 }
-
             }
             else
             {

@@ -1,4 +1,5 @@
 ﻿using ATM.Models;
+using ATM.Models.LoggerModels;
 using ATM.Services;
 using ATM.UserContext;
 using System;
@@ -19,6 +20,10 @@ namespace ATM.Menu
     {
         public static void WelcomeScreen()
         {
+            Guid guid = Guid.NewGuid();
+            UserLog.GetCorillationId(guid);
+            CardLog.GetCorillationId(guid);
+            TransactionLog.GetCorillationId(guid);
 
             UserRepository userRepository = new UserRepository();
             AdminServices AdminServices = new AdminServices();
@@ -40,13 +45,15 @@ namespace ATM.Menu
 
             else if (foundedUser.IsAdmin)
             {
-
+                
                 Console.ForegroundColor = ConsoleColor.Red;
+                UserLog.CreateUserLoggerInformation(foundedUser.Id);
                 AdminMenu AdminMenu = new AdminMenu();
-
             }
             else
             {
+                
+                UserLog.CreateUserLoggerInformation(foundedUser.Id);
                 UserMenu UserMenu = new UserMenu(foundedUser);
             }
 

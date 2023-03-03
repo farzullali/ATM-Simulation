@@ -1,5 +1,6 @@
 ﻿using ATM.DBContext;
 using ATM.Models;
+using ATM.Models.LoggerModels;
 using ATM.Services;
 using ATM.UserContext;
 using System;
@@ -73,12 +74,12 @@ namespace ATM.Menu
                     Console.Clear();
                     Console.WriteLine("User's amount: ");
                     Console.WriteLine();
-                    userServices.ShowAmount(currUser.Id);
+                    currUser.ShowAmount(currUser.Id);
                     WaitScreen();
                     break;
                 case "2":
                     Console.Clear();
-                    userServices.UserCardDetailsHandler(currUser.CardsId);
+                    currUser.UserCardDetailsHandler(currUser.Id);
                     WaitScreen();
                     break;
                 case "3":
@@ -119,6 +120,7 @@ namespace ATM.Menu
 
         private void SettingsMenu(User user)
         {
+            UserLog.CreateUserLoggerInformation(user.Id);
             Console.Clear();
             Console.WriteLine("Settings Menu");
             Console.WriteLine("1. Change Pin");
@@ -139,7 +141,7 @@ namespace ATM.Menu
                     ChangeEmailHandler(user);
                     break;
                 case "3":
-                    ChangeColorHandler();
+                    ChangeColorHandler(user);
                     break;
                 case "4":
                     //show decimals i dont know what is it
@@ -151,23 +153,32 @@ namespace ATM.Menu
         }
         private void ChangePinHandler(User user)
         {
-            Console.WriteLine("Please enter your Current Pin");
-            string currPin = Console.ReadLine();
+            try
+            {
+                Console.WriteLine("Please enter your Current Pin");
+                string currPin = Console.ReadLine();
 
-            if (currPin == user.PIN)
-            {
-                UserServices ur = new UserServices();
-                ur.ChangePin(user);
+                if (currPin == user.PIN)
+                {
+                    user.ChangePin(user);
+                }
+                else
+                {
+                    Console.WriteLine("Your current pin is not correct");
+                }
+                UserLog.CreateUserLoggerInformation(user.Id);
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("Your current pin is not correct");
+                UserLog.CreateUserLoggerError(user.Id, ex);
             }
+            
         }
         private void ShowTransactions(int userId)
         {
             UserServices us = new UserServices();
             us.ShowTransactions(userId);
+            UserLog.CreateUserLoggerInformation(userId);
         }
 
         #region Operations Handlers
@@ -184,8 +195,8 @@ namespace ATM.Menu
 
         public void UserMenuOperations(string chooice, User currUser)
         {
+            UserLog.CreateUserLoggerInformation(currUser.Id);
             UserServices userServices = new UserServices();
-
             switch (chooice)
             {
                 case "1":
@@ -217,6 +228,7 @@ namespace ATM.Menu
         }
         public void PaymentMethod(string selectedProcess)
         {
+
             switch (selectedProcess)
             {
                 case "1":
@@ -240,6 +252,7 @@ namespace ATM.Menu
         #region CardSettingsHandlers
         private void CardSettingsHandler(User currUser)
         {
+            UserLog.CreateUserLoggerInformation(currUser.Id);
             string selected = CardSettingsUserMenu();
 
             switch (selected)
@@ -259,36 +272,58 @@ namespace ATM.Menu
 
         private void ChangeEmailHandler(User user)
         {
-            Console.WriteLine("Please write new email:");
-            string newMail = Console.ReadLine();
+            try
+            {
+                Console.WriteLine("Please write new email:");
+                string newMail = Console.ReadLine();
 
-            UserRepository ur = new UserRepository();
-            ur.UpdateAsync(user);
+                UserRepository ur = new UserRepository();
+                ur.UpdateAsync(user);
 
-            Console.WriteLine("Your Mail is changed");
+                Console.WriteLine("Your Mail is changed");
+                UserLog.CreateUserLoggerInformation(user.Id);
+            }
+            catch (Exception ex)
+            {
+                UserLog.CreateUserLoggerError(user.Id, ex);
+            }
+            
         }
         private void ShowLimit(User user)
         {
             UserServices ur = new UserServices();
 
             ur.GetUserLimit(user);
+            UserLog.CreateUserLoggerInformation(user.Id);
         }
 
         #region card to block
         private void CardToBlock(User currUser)
         {
-            Console.WriteLine("Write card id for block card");
-            CardRepository cardRepository = new CardRepository();
-            var cardsId = cardRepository.GetUserCards(currUser.CardsId).Result;
+            UserLog.CreateUserLoggerInformation(currUser.Id);
 
-            UserServices userServices = new UserServices();
-            userServices.ShowCards(cardsId);
+            try
+            {
+                Console.WriteLine("Write card id for block card");
+                CardRepository cardRepository = new CardRepository();
+                var cardsId = cardRepository.GetUserCards(currUser.CardsId).Result;
 
-            int blockCardId = int.Parse(Console.ReadLine());
-            userServices.BlockCardOperation(blockCardId);
+                UserServices userServices = new UserServices();
+                userServices.ShowCards(cardsId);
 
-            Console.WriteLine("Done!");
+                int blockCardId = int.Parse(Console.ReadLine());
+                userServices.BlockCardOperation(blockCardId);
 
+                Console.WriteLine("Done!");
+
+                CardLog.CreateLoggerInformation(blockCardId);
+            }
+            catch (Exception ex)
+            {
+                UserLog.CreateUserLoggerError(currUser.Id, ex);
+                CardLog.CreateLoggerError(currUser.Id, ex);
+            }
+            
         }
 
         #endregion
@@ -304,8 +339,10 @@ namespace ATM.Menu
         #endregion
 
         #region change color console
-        public void ChangeColorHandler()
+        public void ChangeColorHandler(User user)
         {
+            UserLog.CreateUserLoggerInformation(user.Id);
+
             string[] array = new string[] {
                 "black",
                 "white",
@@ -340,6 +377,7 @@ namespace ATM.Menu
             {
                 Console.WriteLine("wrong chooice");
             }
+
         }
 
         public ConsoleColor GenerateColor(string chooice)

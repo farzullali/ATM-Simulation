@@ -1,0 +1,292 @@
+[
+  {
+    "Id": "411793d5-056d-4a7e-8b1d-6acb2c3ce7a9",
+    "UserId": 4,
+    "Path": "WelcomeScreen",
+    "TimeStamp": "2023-03-02T10:20:47.8285875+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "00000000-0000-0000-0000-000000000000"
+  },
+  {
+    "Id": "9021e192-9a97-43ae-a500-abafe45b8b33",
+    "UserId": 4,
+    "Path": "ShowAmount",
+    "TimeStamp": "2023-03-02T10:20:49.059148+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "00000000-0000-0000-0000-000000000000"
+  },
+  {
+    "Id": "334d8889-87e1-4be0-b5e9-65072f5b4f2a",
+    "UserId": 4,
+    "Path": "UserCardDetailsHandler",
+    "TimeStamp": "2023-03-02T10:20:51.6185941+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "00000000-0000-0000-0000-000000000000"
+  },
+  {
+    "Id": "9bfa7fa2-21ec-4b78-b9c6-ca399e553b04",
+    "UserId": 4,
+    "Path": "WelcomeScreen",
+    "TimeStamp": "2023-03-02T10:20:54.9595497+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "00000000-0000-0000-0000-000000000000"
+  },
+  {
+    "Id": "80c679e4-1244-4c8e-95a2-25ee5428d60d",
+    "UserId": 4,
+    "Path": "ShowAmount",
+    "TimeStamp": "2023-03-02T10:20:56.6230071+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "00000000-0000-0000-0000-000000000000"
+  },
+  {
+    "Id": "92814a09-26c9-4c62-a286-b4b4c6e1a49f",
+    "UserId": 4,
+    "Path": "WelcomeScreen",
+    "TimeStamp": "2023-03-02T10:22:11.5932893+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "20347af7-4f30-4b50-a0d7-99033f841092"
+  },
+  {
+    "Id": "e01a24c3-a069-43b5-b3c1-15491fab9b80",
+    "UserId": 4,
+    "Path": "ShowAmount",
+    "TimeStamp": "2023-03-02T10:22:12.7634067+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "20347af7-4f30-4b50-a0d7-99033f841092"
+  },
+  {
+    "Id": "cc821a5c-7a06-40a9-b71c-1b916069e657",
+    "UserId": 4,
+    "Path": "UserCardDetailsHandler",
+    "TimeStamp": "2023-03-02T10:22:14.4614992+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "20347af7-4f30-4b50-a0d7-99033f841092"
+  },
+  {
+    "Id": "869b1903-97cd-44c7-88f5-7ff9bf2f0a67",
+    "UserId": 4,
+    "Path": "WelcomeScreen",
+    "TimeStamp": "2023-03-02T10:22:17.3907401+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "37c199e4-f12b-4583-b923-83ddcf21cd6c"
+  },
+  {
+    "Id": "93df2e9c-3f60-43a1-8c21-3fc9e2c9290e",
+    "UserId": 4,
+    "Path": "ShowAmount",
+    "TimeStamp": "2023-03-02T10:22:18.9400632+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "37c199e4-f12b-4583-b923-83ddcf21cd6c"
+  },
+  {
+    "Id": "a5acf5aa-0e7c-4893-89e6-2b2329e974c9",
+    "UserId": 4,
+    "Path": "WelcomeScreen",
+    "TimeStamp": "2023-03-02T23:26:33.2333449+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "bac11519-7e03-48dc-b6ac-572bbb33d847"
+  },
+  {
+    "Id": "7e729bab-1506-4112-950b-d459d896e972",
+    "UserId": 4,
+    "Path": "ShowAmount",
+    "TimeStamp": "2023-03-02T23:26:34.6657166+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "bac11519-7e03-48dc-b6ac-572bbb33d847"
+  },
+  {
+    "Id": "1500f936-65ce-47fd-99fa-582655d2c6f1",
+    "UserId": 4,
+    "Path": "UserCardDetailsHandler",
+    "TimeStamp": "2023-03-02T23:26:35.8279661+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "bac11519-7e03-48dc-b6ac-572bbb33d847"
+  },
+  {
+    "Id": "29de1569-5d9b-40e0-b625-f8f61877e2ef",
+    "UserId": 4,
+    "Path": "UserMenuOperations",
+    "TimeStamp": "2023-03-02T23:26:37.7816692+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "bac11519-7e03-48dc-b6ac-572bbb33d847"
+  },
+  {
+    "Id": "d55452c4-1cab-49d5-80c0-5bde3cc6c892",
+    "UserId": 4,
+    "Path": "ShowAmount",
+    "TimeStamp": "2023-03-02T23:26:37.9114031+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "bac11519-7e03-48dc-b6ac-572bbb33d847"
+  },
+  {
+    "Id": "1d0889a0-35aa-44b1-ae2d-e46925896328",
+    "UserId": 4,
+    "Path": "CardToCard",
+    "TimeStamp": "2023-03-02T23:26:46.3869464+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "bac11519-7e03-48dc-b6ac-572bbb33d847"
+  },
+  {
+    "Id": "784fa353-b3b3-457d-9070-9cec64860f85",
+    "UserId": 4,
+    "Path": "CardSettingsHandler",
+    "TimeStamp": "2023-03-02T23:26:50.205982+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "bac11519-7e03-48dc-b6ac-572bbb33d847"
+  },
+  {
+    "Id": "b88c9427-8497-4d1f-8169-d05f1aa73c13",
+    "UserId": 4,
+    "Path": "CardToBlock",
+    "TimeStamp": "2023-03-02T23:26:51.9207856+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "bac11519-7e03-48dc-b6ac-572bbb33d847"
+  },
+  {
+    "Id": "f98225b8-6b93-4832-8452-1c5cefabc2fd",
+    "UserId": 4,
+    "Path": "WelcomeScreen",
+    "TimeStamp": "2023-03-02T23:37:02.0302362+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "726ba1e4-1c2e-4f62-be7f-c54471162c01"
+  },
+  {
+    "Id": "22f16254-6900-4bcb-aa93-b9137aebde2f",
+    "UserId": 4,
+    "Path": "CardSettingsHandler",
+    "TimeStamp": "2023-03-02T23:37:04.2068802+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "726ba1e4-1c2e-4f62-be7f-c54471162c01"
+  },
+  {
+    "Id": "47ec6c14-d6b0-4225-a48f-9a7c0c1ff58f",
+    "UserId": 4,
+    "Path": "CardToBlock",
+    "TimeStamp": "2023-03-02T23:37:07.5069412+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "726ba1e4-1c2e-4f62-be7f-c54471162c01"
+  },
+  {
+    "Id": "3e7bf5ab-07a4-4459-b8fe-13507e1afbc3",
+    "UserId": 4,
+    "Path": "WelcomeScreen",
+    "TimeStamp": "2023-03-02T23:40:47.6587146+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "89d504c1-e2de-4ca0-908d-b322ccc6f7fd"
+  },
+  {
+    "Id": "afaf6d28-2b1e-406e-8f78-3f136228e2af",
+    "UserId": 4,
+    "Path": "CardSettingsHandler",
+    "TimeStamp": "2023-03-02T23:40:49.7255594+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "89d504c1-e2de-4ca0-908d-b322ccc6f7fd"
+  },
+  {
+    "Id": "75f64323-59f6-4645-8271-1cc54f980330",
+    "UserId": 4,
+    "Path": "CardToBlock",
+    "TimeStamp": "2023-03-02T23:40:54.0914982+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "89d504c1-e2de-4ca0-908d-b322ccc6f7fd"
+  },
+  {
+    "Id": "a77fb134-4693-4d70-9232-bd16fec6c4f9",
+    "UserId": 4,
+    "Path": "WelcomeScreen",
+    "TimeStamp": "2023-03-03T09:23:16.8398652+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "fa867252-978c-493e-bc11-d58031c3b33b"
+  },
+  {
+    "Id": "879509ac-6de7-45ed-a79e-bc38ea7484f8",
+    "UserId": 4,
+    "Path": "WelcomeScreen",
+    "TimeStamp": "2023-03-03T10:29:32.1598271+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "66470904-3029-4e00-b593-61093c855c5f"
+  },
+  {
+    "Id": "9513525c-0b97-4d4f-b104-0f4e0947b4c3",
+    "UserId": 4,
+    "Path": "ShowTransactions",
+    "TimeStamp": "2023-03-03T10:29:35.4779604+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "66470904-3029-4e00-b593-61093c855c5f"
+  },
+  {
+    "Id": "8009eab6-7ee2-4e65-90db-65ef19382d5a",
+    "UserId": 4,
+    "Path": "ShowAmount",
+    "TimeStamp": "2023-03-03T10:30:47.0128072+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorilationId": "66470904-3029-4e00-b593-61093c855c5f"
+  },
+  {
+    "Id": "f4d62534-062e-4ecf-af99-8cd1f49d28ad",
+    "UserId": 4,
+    "Path": "UserCardDetailsHandler",
+    "TimeStamp": "2023-03-03T10:30:51.6539635+04:00",
+    "Level": 0,
+    "User": "{\"Id\":4,\"Name\":\"Rufat\",\"Surname\":\"Ismayilov\",\"Email\":\"yeblofonika@gmail.com\",\"PhoneNumber\":\"94508821299\",\"CreatedDate\":\"2023-02-16T11:28:27.8037862+04:00\",\"IsAdmin\":false,\"PIN\":\"6361\",\"CardsId\":[4,13]}",
+    "ErrorMessage": null,
+    "CorrelationId": "66470904-3029-4e00-b593-61093c855c5f"
+  }
+]

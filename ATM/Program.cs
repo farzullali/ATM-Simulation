@@ -4,6 +4,7 @@ using ATM.Services;
 using ATM.UserContext;
 
 bool check = true;
+string name = "Gunel";
 
 do
 {

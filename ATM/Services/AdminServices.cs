@@ -2,6 +2,7 @@
 using ATM.Menu;
 using ATM.Models;
 using ATM.UserContext;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -175,7 +176,7 @@ namespace ATM.Services
             // add card Hodler Name
             var user = userRepository.FindByIdAsync(existingUserId).Result;
             cardRepository.AddCardHolderName(choosedCardId, user);
-            cardRepository.AddCardOwnerId(choosedCardId ,existingUserId);
+            cardRepository.AddCardOwnerId(choosedCardId, existingUserId);
         }
 
         public void ShowCardList(List<Card> cardList)
@@ -266,6 +267,7 @@ namespace ATM.Services
 
         public void ShowAllCardList()
         {
+
             CardRepository cr = new CardRepository();
             var cardList = cr.GetAll().Result;
 
@@ -394,6 +396,11 @@ namespace ATM.Services
             EmailServices.SendLimitWarMail(cardId);
 
             Console.WriteLine("Card is blocked....");
+        }
+
+        public static void ShowLog()
+        {
+            
         }
     }
 }

@@ -18,5 +18,32 @@ namespace ATM.Models
         public decimal Amount { get; set; }
         public int OwnerUserId { get; set; } // ???????? what r u thinking do something about this shit, bro?!
         public bool IsActive { get; set; } = true;
+
+        public string ShowCardLastFourNumber()
+        {
+            
+            char[] lastFourNumberCard = CardNumber.ToCharArray(11, 4);
+
+            string lastFour = "****" + new string(lastFourNumberCard);
+
+            return lastFour;
+        }
+
+        public string ShowCardType()
+        {
+            if(CardType == 0)
+            {
+                return "Master Card";
+            }
+            else if(CardType == 1)
+            {
+                return "Visa";
+            }
+            else
+            {
+                return "";
+            }
+        }
     }
-}
+    }
+

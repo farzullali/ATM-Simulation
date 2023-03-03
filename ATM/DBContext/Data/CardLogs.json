@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "e9761f6b-6878-4487-8ff7-33f215d609e8",
+    "CardId": 4,
+    "Path": "CardToCard",
+    "TimeStamp": "2023-03-01T12:17:10.892941+04:00",
+    "Level": 0,
+    "Card": "{\"Id\":4,\"CardNumber\":\"4052502412831991\",\"ExpirationTime\":\"2027-02-12T10:07:42.404579+04:00\",\"Cvv\":\"142\",\"CardHolderName\":\"RufatIsmayilov\",\"CardType\":2,\"Amount\":9977.0,\"OwnerUserId\":4,\"IsActive\":true}",
+    "ErrorMessage": null,
+    "CorilationId": "00000000-0000-0000-0000-000000000000"
+  },
+  {
+    "Id": "7a8f748f-d730-4556-9bec-c750424b4408",
+    "CardId": 4,
+    "Path": "CardToCard",
+    "TimeStamp": "2023-03-02T09:19:52.4582239+04:00",
+    "Level": 0,
+    "Card": "{\"Id\":4,\"CardNumber\":\"4052502412831991\",\"ExpirationTime\":\"2027-02-12T10:07:42.404579+04:00\",\"Cvv\":\"142\",\"CardHolderName\":\"RufatIsmayilov\",\"CardType\":2,\"Amount\":9976.0,\"OwnerUserId\":4,\"IsActive\":true}",
+    "ErrorMessage": null,
+    "CorilationId": "00000000-0000-0000-0000-000000000000"
+  },
+  {
+    "Id": "fbc4bcf1-9bf9-4f73-a8b4-2c134c6380db",
+    "CardId": 13,
+    "Path": "CardToCard",
+    "TimeStamp": "2023-03-02T23:26:46.4066981+04:00",
+    "Level": 0,
+    "Card": "{\"Id\":13,\"CardNumber\":\"4052502475231884\",\"ExpirationTime\":\"2027-02-20T17:59:40.6987325+04:00\",\"Cvv\":\"843\",\"CardHolderName\":\"Rufat Ismayilov\",\"CardType\":2,\"Amount\":20.0,\"OwnerUserId\":0,\"IsActive\":true}",
+    "ErrorMessage": null,
+    "CorilationId": "bac11519-7e03-48dc-b6ac-572bbb33d847"
+  },
+  {
+    "Id": "d9a1ef2d-6799-4be9-bde0-a545cb8760f5",
+    "CardId": 4,
+    "Path": "CardToBlock",
+    "TimeStamp": "2023-03-02T23:41:10.5656784+04:00",
+    "Level": 0,
+    "Card": "{\"Id\":4,\"CardNumber\":\"4052502412831991\",\"ExpirationTime\":\"2027-02-12T10:07:42.404579+04:00\",\"Cvv\":\"142\",\"CardHolderName\":\"RufatIsmayilov\",\"CardType\":2,\"Amount\":9986.0,\"OwnerUserId\":4,\"IsActive\":true}",
+    "ErrorMessage": null,
+    "CorilationId": "89d504c1-e2de-4ca0-908d-b322ccc6f7fd"
+  }
+]

@@ -57,6 +57,8 @@ namespace ATM.Menu
             Console.WriteLine("                             5. Show All User List");
             Console.WriteLine("                             6. Show All Cards");
             Console.WriteLine("                             7. BLocked or active cards");
+            Console.WriteLine("                             8. Show operations Log");
+
 
             Console.WriteLine();
             Console.WriteLine("                             0. Sign out");
@@ -100,6 +102,12 @@ namespace ATM.Menu
                     return 1;
                 case "7":
                     BlockedActiveCardsHandler();
+                    WaitScreen();
+                    return 1;
+                case "8":
+                    //Show log
+                    Console.Clear();
+                    AdminServices.ShowLog();
                     WaitScreen();
                     return 1;
                 case "0":

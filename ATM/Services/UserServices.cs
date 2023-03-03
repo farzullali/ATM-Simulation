@@ -1,5 +1,6 @@
 ﻿using ATM.DBContext;
 using ATM.Models;
+using ATM.Models.LoggerModels;
 using ATM.UserContext;
 using System;
 using System.Collections.Generic;
@@ -11,136 +12,71 @@ namespace ATM.Services
 {
     public class UserServices
     {
-        public User GetUser(int id)
-        {
-            UserRepository userRepository = new UserRepository();
-            User user = userRepository.FindByIdAsync(id).Result;
-            return user;
-        }
-
-        #region Show Amount
-
-        public void ShowAmount(int userId)
-        {
-            User user = GetUser(userId);
-            var userCards = GetUserCards(user.CardsId);
-            decimal summAmount = 0;
-
-            Console.WriteLine($"Hello, dear {user.Name}! Your Cards and amount list is there: ");
-            Console.WriteLine();
-
-            foreach (Card curr in userCards)
-            {
-                summAmount += curr.Amount;
-                Console.WriteLine($"Card number: {ShowCardNumber(curr)}     Card Type: {ShowCardType(curr)}     Amount: {curr.Amount} man.");
-            }
-
-            Console.WriteLine();
-            Console.WriteLine($"Your bank account summary of amount is: {summAmount}");
-        }
-
-        public string ShowCardNumber(Card card)
-        {
-            string cardNumber = card.CardNumber;
-            char[] lastFourNumberCard = cardNumber.ToCharArray(11, 4);
-
-            string lastFour = "****" + new string(lastFourNumberCard);
-
-            return lastFour;
-        }
-
-        public List<Card> GetUserCards(List<int> cardsId)
-        {
-            CardRepository cardRepository = new CardRepository();
-            List<Card> userCards = cardRepository.GetUserCards(cardsId).Result;
-
-            return userCards;
-        }
-
-        #endregion
-
-
-        #region Card Handler
-        public void UserCardDetailsHandler(List<int> cardsId)
-        {
-            var userCards = GetUserCards(cardsId);
-
-            foreach (Card card in userCards)
-            {
-                string lastFourNumber = ShowCardNumber(card);
-                string cardType = GetCardType(card);
-                Console.WriteLine($"Card Number: {lastFourNumber}   Card Type: {cardType}   Amount: {card.Amount}");
-            }
-        }
-
-        public string GetCardType(Card card)
-        {
-            if (card.CardType == 1)
-            {
-                return "Master Card";
-            }
-            else
-            {
-                return "Visa";
-            }
-        }
-        #endregion
-
         #region Card To Card
         public void CardToCard(User user)
         {
-            Console.WriteLine("Your card: ");
-            ShowAmount(user.Id);
-            //choose card for send money
-            int userCardId = ChooseUserCard(user.CardsId);
-
-            // select user for send money
-            int selectedUserId = SelectUserForSend(user);
-            //show choiiced user cards
-            int receiverCardId = ReceiverCardIdHandler(selectedUserId, userCardId);
-
-            decimal forSendMoneyAmount = InputAmountForSend();
-            //check limit
-            decimal checkLimit = CheckOverLimit(user.Id, forSendMoneyAmount);
-            if (checkLimit < 0)
+            int cardId = -1;
+            try
             {
-                Console.WriteLine("Your limit is overed and your card was blocked. Please contact Admin");
-                BlockCardOperation(userCardId);                
-                return;
+                Console.WriteLine("Your card: ");
+                user.ShowAmount(user.Id);
+                //choose card for send money
+                int userCardId = ChooseUserCard(user);
+                cardId = userCardId;
+
+                // select user for send money
+                int selectedUserId = SelectUserForSend(user);
+                //show choiiced user cards
+                int receiverCardId = ReceiverCardIdHandler(selectedUserId, userCardId);
+
+                decimal forSendMoneyAmount = InputAmountForSend();
+                //check limit
+                decimal checkLimit = CheckOverLimit(user.Id, forSendMoneyAmount);
+                if (checkLimit < 0)
+                {
+                    Console.WriteLine("Your limit is overed and your card was blocked. Please contact Admin");
+                    BlockCardOperation(userCardId);
+                    return;
+                }
+
+                //check card is Active or is block
+                bool isActive = CheckCardIsBlocked(userCardId);
+                if (!isActive)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("                 Your current Card r blocked... Please contact with support.");
+                    return;
+                }
+
+                CardRepository cr = new CardRepository();
+
+                // check balance out for aomunt if have not enough money
+                bool checkBalanceForProcess = CheckBalanceForSendMoney(userCardId, forSendMoneyAmount);
+                if (checkBalanceForProcess)
+                {
+                    Console.WriteLine($"U have not for money for send {forSendMoneyAmount}man.");
+                    return;
+                }
+
+                Log newLog = CreateLog(selectedUserId, forSendMoneyAmount, userCardId, receiverCardId);
+                //log transaction
+                CreateLogOnTransaction(user.Id, newLog);
+
+                // userCardId send money to selectedCard
+                decimal percent = cr.CardToCard(userCardId, receiverCardId, forSendMoneyAmount);
+                if (percent > 0)
+                {
+                    Console.WriteLine($"From Master Card send money other bank cards then 1% taxes...");
+                    Console.WriteLine($"Transfer taxes: {percent} man");
+                }
+
+                UserLog.CreateUserLoggerInformation(user.Id);
+                CardLog.CreateLoggerInformation(userCardId);
             }
-
-            //check card is Active or is block
-            bool isActive = CheckCardIsBlocked(userCardId);
-            if (!isActive)
+            catch (Exception ex)
             {
-                Console.WriteLine();
-                Console.WriteLine("                 Your current Card r blocked... Please contact with support.");
-                return;
-            }
-
-
-            CardRepository cr = new CardRepository();
-
-
-
-            // check balance out for aomunt if have not enough money
-            bool checkBalanceForProcess = CheckBalanceForSendMoney(userCardId, forSendMoneyAmount);
-            if (checkBalanceForProcess)
-            {
-                Console.WriteLine($"U have not for money for send {forSendMoneyAmount}man.");
-                return;
-            }
-
-            Log newLog = CreateLog(selectedUserId, forSendMoneyAmount, userCardId, receiverCardId);
-            //log transaction
-            CreateLogOnTransaction(user.Id, newLog);
-
-            // userCardId send money to selectedCard
-            decimal percent = cr.CardToCard(userCardId, receiverCardId, forSendMoneyAmount);
-            if (percent > 0)
-            {
-                Console.WriteLine($"From Master Card send money other bank cards then 1% taxes...");
-                Console.WriteLine($"Transfer taxes: {percent} man");
+                UserLog.CreateUserLoggerError(user.Id, ex);
+                CardLog.CreateLoggerError(cardId, ex);
             }
         }
 
@@ -170,7 +106,6 @@ namespace ATM.Services
         public void CreateLogOnTransaction(int userId, Log newLog)
         {
             TransactionRepository tr = new TransactionRepository();
-
             var newTrLogOfUser = tr.NewLog(userId, newLog).Result;
 
             Console.WriteLine($"Your limit left: {newTrLogOfUser.Limit}");
@@ -194,19 +129,18 @@ namespace ATM.Services
             };
 
             return tempLog;
-
         }
 
-        public int ChooseUserCard(List<int> cardsId)
+        public int ChooseUserCard(User user)
         {
-            var cardListCurrUser = GetUserCards(cardsId);
+            var cardListCurrUser = user.GetUserCards(user.CardsId);
             if (cardListCurrUser.Count > 1)
             {
                 Console.WriteLine("Please choose your card for send money: ");
 
                 foreach (Card curr in cardListCurrUser)
                 {
-                    Console.WriteLine($"Id: {curr.Id} Card number: {ShowCardNumber(curr)}     Amount: {curr.Amount} man.");
+                    Console.WriteLine($"Id: {curr.Id} Card number: {curr.ShowCardLastFourNumber()}     Amount: {curr.Amount} man.");
                 }
                 int cardId = int.Parse(Console.ReadLine());
 
@@ -283,20 +217,8 @@ namespace ATM.Services
                 {
                     continue;
                 }
-                Console.WriteLine($"Id: {card.Id}   Card Number: {ShowCardNumber(card)}     Card Type: {ShowCardType(card)}");
+                Console.WriteLine($"Id: {card.Id}   Card Number: {card.ShowCardLastFourNumber()}     Card Type: {card.ShowCardType()}");
             }
-        }
-        public string ShowCardType(Card card)
-        {
-            if (card.CardType == 1)
-            {
-                return "Master Card";
-            }
-            else if (card.CardType == 2)
-            {
-                return "Visa";
-            }
-            return "";
         }
         public decimal InputAmountForSend()
         {
@@ -311,7 +233,6 @@ namespace ATM.Services
             cardRepository.BlockUnblockCard(cardId);
             EmailServices.SendLimitWarMail(cardId);
         }
-
 
         #endregion
 
@@ -349,27 +270,6 @@ namespace ATM.Services
                     Console.WriteLine("         Excome....      :(  ");
                     Console.WriteLine($"To: {tr.SenderCardId}   amount: {tr.Amount}");
                 }
-            }
-        }
-        public void ChangePin(User user)
-        {
-
-            Console.WriteLine("please enter your new pin");
-            string newPin = Console.ReadLine();
-            Console.WriteLine("Please enter new pin again");
-            string checkNewPin = Console.ReadLine();
-
-            if (newPin == checkNewPin)
-            {
-                user.PIN = newPin;
-
-                UserRepository ur = new UserRepository();
-                ur.UpdateAsync(user);
-
-            }
-            else
-            {
-                Console.WriteLine("your new pin does not true with second time what is u wrote");
             }
         }
 

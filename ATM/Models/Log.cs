@@ -15,6 +15,5 @@ namespace ATM.Models
         public decimal Amount { get; set; }
         public int ReceiverUserId { get; set; }
         public bool isReceive { get; set; }
-
     }
 }

@@ -12,5 +12,17 @@ namespace ATM.Models
         public decimal Limit { get; set; }
         public List<Log> Log { get; set; }
 
+        public void ShowLogOperations()
+        {
+            foreach(Log item in Log)
+            {
+                Console.WriteLine($"Sender CardId: {item.SenderCardId} " +
+                    $"Transaction Amount: {item.Amount} " +
+                    $"Receiver CardId: {item.ReceiverCardId}" +
+                    $"Receiver UserId: {item.ReceiverUserId}" +
+                    $"Transaction Time: {item.OperationTime}");
+            }
+        }
+
     }
 }
